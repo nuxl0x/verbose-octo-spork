@@ -14,6 +14,7 @@ By itself, <b>VOS</b> does not actually contain any inherent functionality. It i
 `scan`
 `math`
 `map`
+`install-dependencies`
 
 ## Command Syntax
 ### ```vos <command> <flags> <parameters>```
