@@ -14,11 +14,14 @@ By itself, <b>VOS</b> does not actually contain any inherent functionality. It i
 `scan`
 `math`
 `install-dependencies`
+`cmdlist`
 
 ## Command Syntax
 ### ```vos <command> <flags> <parameters>```
 
 All commands that use <b>VOS</b> start with the prefix of `vos`. This indicates that the following command is being handled by the <b>VOS</b> utility. Following this, you have to include the paramaters that tell the application what you would like to do.
+
+Run `vos cmdlist` to list all commands.
 
 ## Dependencies
 > [!NOTE]
