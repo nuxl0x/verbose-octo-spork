@@ -10,12 +10,6 @@ By itself, <b>VOS</b> does not actually contain any inherent functionality. It i
 > This software has been created and tested on Arch Linux. Please open any issues if there are problems due to combatability.
 > </br>This program will NOT function on Windows machines.
 
-## Included Commands
-`scan`
-`math`
-`install-dependencies`
-`cmdlist`
-
 ## Command Syntax
 ### ```vos <command> <flags> <parameters>```
 
@@ -29,3 +23,5 @@ Run `vos cmdlist` to list all commands.
 > </br>This will re-install any of the utilities that you already have and install the new ones using your local package manager.
 
 - Nmap (Not implemented.)
+
+View the full documentation for <b>VOS</b> here: https://vos-docs.readthedocs.io/en/latest/
