@@ -25,3 +25,7 @@ All commands that use <b>VOS</b> start with the prefix of `vos`. This indicates 
 > [!NOTE]
 > All dependencies will be installed by <b>VOS</b> automatically after installing the program. All you have to do is run the command `vos install-dependencies`.
 > </br>This will re-install any of the utilities that you already have and install the new ones using your local package manager.
+
+- Nmap
+- Metasploit
+- Wireshark
