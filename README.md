@@ -16,7 +16,7 @@ By itself, <b>VOS</b> does not actually contain any inherent functionality. It i
 All commands that use <b>VOS</b> start with the prefix of `vos`. This indicates that the following command is being handled by the <b>VOS</b> utility. Following this, you have to include the paramaters that tell the application what you would like to do.
 
 Run `vos cmdlist` to list all commands.
-Run `vos man <command>` in order to view a page on how to use the respective command.
+</br>Run `vos man <command>` in order to view a page on how to use the respective command.
 
 ## Dependencies
 > [!NOTE]
