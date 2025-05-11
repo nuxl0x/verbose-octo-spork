@@ -1,5 +1,8 @@
 # VOS | verbose-octo-spork
-Verbose Octo Spork, better referred to as <b>VOS</b>, is a multi-use utility that allows a user to access a wide variety of malicious and non-malicious functions all through a single program responsible for managing and handling all the smaller utilities used.
+> [!IMPORTANT]
+> All code published to the repository is in development and is NOT confirmed to work or not. Any issues with code that has not been sourced from a release are not to be reported.
+
+Verbose Octo Spork, better referred to as <b>VOS</b>, is a multi-use utility that allows a user to access a wide variety of different functions all through a single program responsible for managing and handling all the smaller utilities used.
 
 > [!WARNING]
 > The software developer holds absolutely zero responsibility for any malicious actions that people may take through the usage of this software. Any and all actions that are a result of this software are the responsiblity of the user responsible for those actions and them only.
