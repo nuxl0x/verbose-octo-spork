@@ -101,7 +101,23 @@ if [[ "$EUID" != 0 ]]; then
 fi
 
 echo "[VOS-INFO] configure.sh is running successfully. Please wait."
+sleep 2
+clear
+cat <<EOF
+ ,ggg,         ,gg    _,gggggg,_            ,gg,   
+dP""Y8a       ,8P   ,d8P""d8P"Y8b,         i8""8i  
+Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'  
+ `"  88       88   d8'    `Ybaaad88P'       `88'   
+     88       88   8P       `""""Y8         dP"8,  
+     I8       8I   8b            d8        dP' `8a 
+     `8,     ,8'   Y8,          ,8P       dP'   `Yb
+      Y8,   ,8P    `Y8,        ,8P'   _ ,dP'     I8
+       Yb,_,dP      `Y8b,,__,,d8P'    "888,,____,dP
+        "Y8P"         `"Y8888P"'      a8P"Y88888P" 
 
+==========================================================
+
+EOF
 read -p "[VOS-INPUT] What action would you like to perform? (Install, Remove.): " action
 
 action="${action,,}"
