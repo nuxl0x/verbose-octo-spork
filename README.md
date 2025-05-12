@@ -1,4 +1,14 @@
 # VOS | verbose-octo-spork
+<pre> ,ggg,         ,gg    _,gggggg,_            ,gg,   
+dP""Y8a       ,8P   ,d8P""d8P"Y8b,         i8""8i  
+Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'  
+ `"  88       88   d8'    `Ybaaad88P'       `88'   
+     88       88   8P       `""""Y8         dP"8,  
+     I8       8I   8b            d8        dP' `8a 
+     `8,     ,8'   Y8,          ,8P       dP'   `Yb
+      Y8,   ,8P    `Y8,        ,8P'   _ ,dP'     I8
+       Yb,_,dP      `Y8b,,__,,d8P'    "888,,____,dP
+        "Y8P"         `"Y8888P"'      a8P"Y88888P"</pre>                                                   
 > [!IMPORTANT]
 > All code published to the repository is in development and is NOT confirmed to work or not. Any issues with code that has not been sourced from a release are not to be reported.
 
