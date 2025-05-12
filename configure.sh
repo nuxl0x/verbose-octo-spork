@@ -56,7 +56,33 @@ function install {
 }
 
 function remove {
-    echo "Remove."
+    read -p "[VOS-INPUT] Please confirm that you wish to uninstall VOS from your device. (y/n): " confirm_uninstall
+
+    if [[ "$confirm_uninstall" -ne "y" ]]; then
+        echo "[VOS-ERROR] Uninstall unconfirmed. Exiting."
+        exit 1
+    fi
+
+    echo "[VOS-INFO] Uninstall confirmed. Uninstalling..."
+
+    mv "usr/local/bin/vos/commands" "$INSTALL_DIR"
+    mv "usr/local/bin/vos" "$INSTALL_DIR"
+    mv "$INSTALL_DIR/vos" "$INSTALL_DIR/vos.sh"
+
+    if [[ ! -e "$INSTALL_DIR/vos.sh" ]]; then
+        echo "[VOS-ERROR] File 'vos.sh' not detected within the same folder as 'configure.sh'. There has been an error during uninstallation."
+        exit 1
+    fi
+    echo "[VOS-INFO] File 'vos.sh' detected successfully."
+
+    if [[ ! -e "$INSTALL_DIR/commands" ]]; then
+        echo "[VOS-ERROR] Folder 'commands' not detected within the same folder as 'configure.sh'. There has been an error during uninstallation."
+        exit 1
+    fi
+    echo "[VOS-INFO] Folder 'commands' detected successfully."
+
+    echo "[VOS-INFO] Uninstallation has been completed!"
+    exit 0
 }
 
 
