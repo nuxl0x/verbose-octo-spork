@@ -1,11 +1,13 @@
 #!/usr/bin/bash
 
+# configure.sh execution directory detector
 INSTALL_DIR="$(dirname "$(realpath "$0")")"
 echo "[VOS-INFO] configure.sh is running from: $INSTALL_DIR."
                                                                                                                                                                                
 
-
+# ----- Installation Function -----
 function install {
+    # Manual user confirmation
     echo "[VOS-INFO] Installation Process Activated. Confirm that all required files (vos.sh & commands folder) are located in the same folder as configure.sh before continuing."
     read -p "[VOS-INPUT] Confirm that all required files are present in the same location as configure.sh? (y/n): " install_confirm
     if [[ "$install_confirm" != "y" ]]; then
@@ -14,6 +16,7 @@ function install {
     fi
     echo "[VOS-INFO] Installation confirmed by user."
 
+    # Checks for required files to install
     if [[ ! -e "$INSTALL_DIR/vos.sh" ]]; then
         echo "[VOS-ERROR] File 'vos.sh' not detected within the same folder as 'configure.sh'. Please make sure that 'vos.sh' is in the correct folder."
         exit 1
@@ -25,31 +28,54 @@ function install {
         exit 1
     fi
     echo "[VOS-INFO] Folder 'commands' detected successfully."
+
+    if [[ ! -e "$INSTALL_DIR/assets" ]]; then
+        echo "[VOS-ERROR] Folder 'assets' not detected within the same folder as 'configure.sh'. Please make sure that 'assets' is in the correct folder."
+        exit 1   
+    fi
+    echo "[VOS-INFO] Folder 'assets' detected successfully."
     
     echo "[VOS-INFO] After installation, if you wish to uninstall, simply run 'vos uninstall' or run this script in uninstall mode."
+    sleep 2
 
+    # Renames vos.sh into vos (executable)
     mv "$INSTALL_DIR/vos.sh" "$INSTALL_DIR/vos"
     echo "[VOS-INFO] vos.sh renamed to vos."
 
     chmod +x "$INSTALL_DIR/vos"
     echo "[VOS-INFO] vos given executable permissions."
 
-    rm -f /usr/local/bin/vos
+    # Removes old installs and puts new install in
+    rm -f "/usr/local/bin/vos"
     mv "$INSTALL_DIR/vos" "/usr/local/bin"
     echo "[VOS-INFO] vos moved into '/usr/local/bin'."
 
+    # Checks for new install
     if  [[ ! -e "/usr/local/bin/vos" ]]; then
         echo "[VOS-ERROR] Failed to detect successful installation of 'vos' / 'vos.sh' within /usr/local/bin. Please run this script in uninstall mode and try again. If this fails, report the issue on Github."
         exit 1
     fi
 
-    rm -rf /usr/local/share/vos/commands
-    mkdir -p /usr/local/share/vos
+    # Removes old commands folder and creates vos share if it doesn't exist
+    rm -rf "/usr/local/share/vos/commands"
+    mkdir -p "/usr/local/share/vos"
+    # Puts new commands install in
     mv "$INSTALL_DIR/commands" "/usr/local/share/vos"
     echo "[VOS-INFO] commands moved into '/usr/local/share/vos'."
 
+    # checks for new commands install
     if  [[ ! -e "/usr/local/share/vos/commands" ]]; then
         echo "[VOS-ERROR] Failed to detect successful installation of 'commands' within /usr/local/share/vos. Please run this script in uninstall mode and try again. If this fails, report the issue on Github."
+        exit 1
+    fi
+
+    rm -rf "/usr/local/share/vos/assets"
+    mv "$INSTALL_DIR/assets" "/usr/local/share/vos"
+    echo "[VOS-INFO] assets moved into '/usr/local/share/vos'."
+
+    # checks for new assets install
+    if  [[ ! -e "/usr/local/share/vos/assets" ]]; then
+        echo "[VOS-ERROR] Failed to detect successful installation of 'assets' within /usr/local/share/vos. Please run this script in uninstall mode and try again. If this fails, report the issue on Github."
         exit 1
     fi
 
@@ -58,7 +84,9 @@ function install {
 
 }
 
+# ----- Uninstall Function -----
 function remove {
+    # uninstall confirmation
     read -p "[VOS-INPUT] Please confirm that you wish to uninstall VOS from your device. (y/n): " confirm_uninstall
 
     if [[ "$confirm_uninstall" != "y" ]]; then
@@ -68,15 +96,20 @@ function remove {
 
     echo "[VOS-INFO] Uninstall confirmed. Uninstalling..."
 
+    # moves all vos related files back to the same directory as configure.sh
     mv "/usr/local/share/vos/commands" "$INSTALL_DIR"
+    mv "/usr/local/share/vos/assets" "$INSTALL_DIR"
     mv "/usr/local/bin/vos" "$INSTALL_DIR"
 
+    # checks for vos before conversion
     if [[ ! -e "$INSTALL_DIR/vos" ]]; then
         echo "[VOS-ERROR] Failed to detect 'vos' in '$INSTALL_DIR'."
     fi
 
+    # converts vos primary executable back into a bash script (vos.sh)
     mv "$INSTALL_DIR/vos" "$INSTALL_DIR/vos.sh"
 
+    # checks to see if all files have been moved back successfully
     if [[ ! -e "$INSTALL_DIR/vos.sh" ]]; then
         echo "[VOS-ERROR] File 'vos.sh' not detected within the same folder as 'configure.sh'. There has been an error during uninstallation."
         exit 1
@@ -89,20 +122,27 @@ function remove {
     fi
     echo "[VOS-INFO] Folder 'commands' detected successfully."
 
+    if [[ ! -e "$INSTALL_DIR/assets" ]]; then
+        echo "[VOS-ERROR] Folder 'assets' not detected within the same folder as 'configure.sh'. There has been an error during uninstallation."
+        exit 1
+    fi
+    echo "[VOS-INFO] Folder 'assets' detected successfully."
+
     echo "[VOS-INFO] Uninstallation has been completed!"
     exit 0
 }
 
 
-
+# checks if install.sh is running as sudo
 if [[ "$EUID" != 0 ]]; then
-    echo "[VOS-ERROR] install.sh must be run with sudo, or as the root user."
+    echo "[VOS-ERROR] install.sh must be run with sudo."
     exit 1
 fi
 
 echo "[VOS-INFO] configure.sh is running successfully. Please wait."
 sleep 2
 clear
+# cool ascii logo
 cat <<EOF
  ,ggg,         ,gg    _,gggggg,_            ,gg,   
 dP""Y8a       ,8P   ,d8P""d8P"Y8b,         i8""8i  
@@ -120,6 +160,7 @@ Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'
 EOF
 read -p "[VOS-INPUT] What action would you like to perform? (Install, Remove.): " action
 
+# de-capitalizes any responses
 action="${action,,}"
 if [[ "$action" == "install" ]]; then
     install
