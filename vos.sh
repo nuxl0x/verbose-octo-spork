@@ -5,6 +5,7 @@ COMMAND="$1"
 ARG_1="$2"
 ARG_2="$3"
 ARG_3="$4"
+ARG_4="$5"
 
 COMMANDS_DIRECTORY="/usr/local/share/vos/commands"
 ASSETS_DIRECTORY="/usr/local/share/vos/assets"
@@ -24,7 +25,7 @@ function man {
 }
 
 function math {
-    bash "$COMMANDS_DIRECTORY/math.sh" "$ARG_1" "$ARG_2" "$ARG_3"
+    bash "$COMMANDS_DIRECTORY/math.sh" "$ARG_1" "$ARG_2" "$ARG_3" "$ARG_4"
 }
 
 function scan {
@@ -36,8 +37,8 @@ function uninstall {
 }
 
 function help {
-    echo "Usage: vos <command> [args...]"
-    echo "Run 'vos cmdlist' to view all commands."
+    echo "[VOS] Usage: vos <command> [args...]"
+    echo "[VOS] Run 'vos cmdlist' to view all commands."
 }
 
 case "$COMMAND" in
@@ -49,8 +50,8 @@ case "$COMMAND" in
     uninstall) uninstall ;;
     ""|help) help ;;
     *)
-        echo "Error: Command '$COMMAND' not found."
-        echo "If you believe this to be an issue, report this error on Github."
+        echo "[VOS] Error: Command '$COMMAND' not found."
+        echo "[VOS] If you believe this to be an issue, report this error on Github."
         echo
         help
         exit 1
