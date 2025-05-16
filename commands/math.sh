@@ -28,11 +28,11 @@ function linear {
 	result_4=$(echo "scale=2; $gradient * $x_coord_4 + $y_intercept" | bc -l)
 	result_5=$(echo "scale=2; $gradient * $x_coord_5 + $y_intercept" | bc -l)
 	
-	echo "($x_coord_1, $result_1)"
-	echo "($x_coord_2, $result_2)"
-	echo "($x_coord_3, $result_3)"
-	echo "($x_coord_4, $result_4)"
-	echo "($x_coord_5, $result_5)"
+	echo "[VOS] ($x_coord_1, $result_1)"
+	echo "[VOS] ($x_coord_2, $result_2)"
+	echo "[VOS] ($x_coord_3, $result_3)"
+	echo "[VOS] ($x_coord_4, $result_4)"
+	echo "[VOS] ($x_coord_5, $result_5)"
 	exit 0
 }
 
