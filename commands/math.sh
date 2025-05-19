@@ -40,8 +40,8 @@ function linear {
 operation="="
 case "$ARG_1" in
 	add) operation="+" ;;
-  sub) operation="-" ;;
-  mul) operation="*" ;;
+	sub) operation="-" ;;
+ 	mult) operation="*" ;;
 	div) operation="/" ;;
 	addition) operation="+" ;;
 	subtraction) operation="-" ;;
