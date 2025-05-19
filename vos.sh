@@ -28,10 +28,6 @@ function math {
     bash "$COMMANDS_DIRECTORY/math.sh" "$ARG_1" "$ARG_2" "$ARG_3" "$ARG_4"
 }
 
-function scan {
-    bash "$COMMANDS_DIRECTORY/scan.sh" "$ARG_1" # potentially pending more arguments
-}
-
 function uninstall {
     bash "$COMMANDS_DIRECTORY/uninstall.sh"
 }
