@@ -57,7 +57,7 @@ function install {
     fi
 
     # Removes old commands folder and creates vos share if it doesn't exist
-    rm -rf "/usr/local/share/vos/commands"
+    rm -rf "/usr/local/share/vos"
     mkdir -p "/usr/local/share/vos"
     # Puts new commands install in
     mv "$INSTALL_DIR/commands" "/usr/local/share/vos"
@@ -69,7 +69,6 @@ function install {
         exit 1
     fi
 
-    rm -rf "/usr/local/share/vos/assets"
     mv "$INSTALL_DIR/assets" "/usr/local/share/vos"
     echo "[VOS-INFO] assets moved into '/usr/local/share/vos'."
 
@@ -127,6 +126,7 @@ function remove {
         exit 1
     fi
     echo "[VOS-INFO] Folder 'assets' detected successfully."
+    rm -rf "/usr/local/share/vos"
 
     echo "[VOS-INFO] Uninstallation has been completed!"
     exit 0
