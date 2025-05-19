@@ -1,1 +1,9 @@
-[VOS - Command List]
+[VOS] verbose-octo-spork \ Command List
+=======================================
+- cmdlist
+- install-dependencies
+- man
+- math
+- uninstall
+=======================================
+Use man(command) in order to see information and usage about every command.
