@@ -1,1 +1,7 @@
+[VOS] verbose-octo-spork \ Manual \ install-dependencies
+=======================================
+Syntax: (vos) install-dependencies
 
+Does nothing, as VOS currently doesn't have any dependencies. This command is recognised by the program, and therefor, there is a manual page.
+=======================================
+Use cmdlist in order to view other commands.
