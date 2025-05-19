@@ -143,7 +143,7 @@ echo "[VOS-INFO] configure.sh is running successfully. Please wait."
 sleep 2
 clear
 # cool ascii logo
-cat <<EOF
+cat <<'EOF'
  ,ggg,         ,gg    _,gggggg,_            ,gg,   
 dP""Y8a       ,8P   ,d8P""d8P"Y8b,         i8""8i  
 Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'  
