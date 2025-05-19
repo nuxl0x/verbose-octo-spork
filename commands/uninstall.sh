@@ -1,3 +1,7 @@
 #!/usr/bin/bash
 
-echo "Not functional as of this version. Please make usage of the uninstall feature in the configuration file until further notice."
+function uninstall {
+  
+}
+
+echo "[VOS-WARNING] This command will COMPLETELY delete VOS and all related files off of your computer."
