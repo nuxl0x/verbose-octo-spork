@@ -9,8 +9,6 @@ Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'
       Y8,   ,8P    `Y8,        ,8P'   _ ,dP'     I8
        Yb,_,dP      `Y8b,,__,,d8P'    "888,,____,dP
         "Y8P"         `"Y8888P"'      a8P"Y88888P"</pre>                                                   
-> [!IMPORTANT]
-> All code published to the repository is in development and is NOT confirmed to work or not. Any issues with code that has not been sourced from a release are not to be reported.
 
 Verbose Octo Spork, better referred to as <b>VOS</b>, is a multi-use utility that allows a user to access a wide variety of different functions all through a single program responsible for managing and handling all the smaller utilities used.
 
@@ -24,7 +22,7 @@ By itself, <b>VOS</b> does not actually contain any inherent functionality. It i
 > </br>This program will NOT function on Windows machines.
 
 ## Command Syntax
-### ```vos <command> <flags> <parameters>```
+### ```vos <command> <parameters>```
 
 All commands that use <b>VOS</b> start with the prefix of `vos`. This indicates that the following command is being handled by the <b>VOS</b> utility. Following this, you have to include the paramaters that tell the application what you would like to do.
 
