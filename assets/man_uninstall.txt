@@ -3,6 +3,6 @@
 Syntax: (vos) uninstall
 
 This command is very simple, and will uninstall VOS by deleting it from your system entirely. 
-Effectively, this command deletes both the executable in /usr/local/bin and the share in /usr/local/shares.
+Effectively, this command deletes both the executable in /usr/local/bin and the share in /usr/local/share.
 =======================================
 Use cmdlist in order to view other commands.
