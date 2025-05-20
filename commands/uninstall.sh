@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 function uninstall {
-  rm "/usr/local/bin/vos"
+  rm -f "/usr/local/bin/vos"
   if [[ -e "/usr/local/bin/vos" ]]; then
     echo "[VOS-ERROR] Failed to detect successful deletion of /usr/local/bin/vos."
     exit 1
@@ -18,7 +18,7 @@ function uninstall {
 
 echo "[VOS-WARNING] This command will COMPLETELY delete VOS and all related files off of your computer."
 read -p "[VOS-INPUT] Confirm that you wish to continue? (y/n): " uninstall_confirm
-uninstall_confirm="${$uninstall_confirm,,}"
+uninstall_confirm="${uninstall_confirm,,}"
 if [[ "$uninstall_confirm" == "y" ]]; then
   uninstall
 fi
