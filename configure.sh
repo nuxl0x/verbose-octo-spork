@@ -9,7 +9,7 @@ echo "[VOS-INFO] configure.sh is running from: $INSTALL_DIR."
 function install {
     # Manual user confirmation
     echo "[VOS-INFO] Installation Process Activated. Confirm that all required files (vos.sh & commands folder) are located in the same folder as configure.sh before continuing."
-    read -p "[VOS-INPUT] Confirm that all required files are present in the same location as configure.sh? (y/n): " install_confirm
+    read -p "[VOS-INPUT] Confirm that all required files are present in the same location as configure.sh? (Y/N): " install_confirm
     if [[ "$install_confirm" != "y" ]]; then
         echo "[VOS-ERROR] User unable to confirm presence of installation files. Please put them in the correct location and answer 'y' to this prompt to install."
         exit 1
@@ -94,6 +94,17 @@ function remove {
     fi
 
     echo "[VOS-INFO] Uninstall confirmed. Uninstalling..."
+    
+    # ensures that vos is installed before attempting to uninstall
+    if [[ ! -e "/usr/local/share/vos" ]]; then
+      echo "[VOS-ERROR] Failed to successfully detect '/usr/local/share/vos'. VOS may not be installed."
+      exit 1
+    fi
+
+    if [[ ! -e "/usr/local/bin/vos" ]]; then
+      echo "[VOS-ERROR] Failed to successfully detect '/usr/local/bin/vos'. VOS may not be installed."
+      exit 1
+    fi
 
     # moves all vos related files back to the same directory as configure.sh
     mv "/usr/local/share/vos/commands" "$INSTALL_DIR"
@@ -158,14 +169,18 @@ Yb, `88       d8'  ,d8'   Y8   "8b,dP      `8,,8'
 ==========================================================
 
 EOF
-read -p "[VOS-INPUT] What action would you like to perform? (Install, Remove.): " action
+read -p "[VOS-INPUT] Select an action to preform. (Install/Remove/I/R): " action
 
 # de-capitalizes any responses
 action="${action,,}"
 if [[ "$action" == "install" ]]; then
-    install
+  install
 elif [[ "$action" == "remove" ]]; then
-    remove
+  remove
+elif [[ "$action" == "i" ]]; then
+  install
+elif [[ "$action" == "r" ]]; then
+  remove
 else
     echo "[VOS-ERROR] You have entered an invalid action. Please enter 'Install' or 'Remove' in order to perform an action."
     exit 1
