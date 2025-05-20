@@ -42,7 +42,6 @@ case "$COMMAND" in
     install-dependencies) install_dependencies ;;
     man) man ;;
     math) math ;;
-    scan) scan ;;
     uninstall) uninstall ;;
     ""|help) help ;;
     *)
