@@ -2,19 +2,14 @@
 =======================================
 Syntax: (vos) math <operator> <number> <number> <custom>
 
-{ Operators }
-  add ( + )
-  sub ( - )
-  mult ( * )
-  div ( / )
-  addition ( + )
-  subtract ( - )
-  subtraction ( - )
-  multiply ( * )
-  multiplication ( * )
-  divide ( / )
-  division ( / )
-  linear
+Operators:
+- add ( + )
+- sub ( - )
+- mult ( * )
+- div ( / )
+- linear ( y = mx + c )
+
+Using the full versions of any of the operators except linear is also supported by VOS and will be correctly recognised.
 
 There are 2 primary use-cases for the math command, being standard mathematical operations, and linear equations.
 In all use cases except for linear equations, the <custom> parameter is unused and is not required to be filled in.
