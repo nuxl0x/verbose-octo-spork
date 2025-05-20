@@ -2,6 +2,6 @@
 =======================================
 Syntax: (vos) install-dependencies
 
-Does nothing, as VOS currently doesn't have any dependencies. This command is recognised by the program, and therefor, there is a manual page.
+Due to VOS not having any current dependencies, the 'install-dependencies' command is not functional.
 =======================================
 Use cmdlist in order to view other commands.
