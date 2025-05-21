@@ -1,9 +1,9 @@
 [VOS] verbose-octo-spork \ Command List
 =======================================
-- cmdlist
-- install-dependencies
-- man
-- math
-- uninstall
+- cmdlist | View list of commands.
+- install-dependencies | Install VOS dependencies.
+- man | View manual page.
+- math | Perform mathematical operation.
+- uninstall | Uninstall VOS.
 =======================================
 Use man(command) in order to see information and usage about every command.

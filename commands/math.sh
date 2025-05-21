@@ -1,9 +1,9 @@
 #!/usr/bin/bash
 
-ARG_1="$1"
-ARG_2="$2"
-ARG_3="$3"
-ARG_4="$4"
+ARG_1="$1" # Mathematical Operator
+ARG_2="$2" # First Number
+ARG_3="$3" # Second Number
+ARG_4="$4" # Custom thing for linear equations
 
 # linear equations handling function
 function linear {
@@ -28,11 +28,11 @@ function linear {
 	result_4=$(echo "scale=2; $gradient * $x_coord_4 + $y_intercept" | bc -l)
 	result_5=$(echo "scale=2; $gradient * $x_coord_5 + $y_intercept" | bc -l)
 	
-	echo "[VOS] ($x_coord_1, $result_1)"
-	echo "[VOS] ($x_coord_2, $result_2)"
-	echo "[VOS] ($x_coord_3, $result_3)"
-	echo "[VOS] ($x_coord_4, $result_4)"
-	echo "[VOS] ($x_coord_5, $result_5)"
+	echo "[VOS] $x_coord_1, $result_1"
+	echo "[VOS] $x_coord_2, $result_2"
+ 	echo "[VOS] $x_coord_3, $result_3"
+	echo "[VOS] $x_coord_4, $result_4"
+	echo "[VOS] $x_coord_5, $result_5"
 	exit 0
 }
 

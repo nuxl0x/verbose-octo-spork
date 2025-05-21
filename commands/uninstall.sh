@@ -12,9 +12,15 @@ function uninstall {
     echo "[VOS-ERROR] Failed to detect successful deletion of /usr/local/share/vos."
     exit 1
   fi
+  echo "[VOS-INFO] /usr/local/share/vos was successfully deleted."
   echo "[VOS-INFO] Uninstallation successful. Terminating..."
   exit 0
 }
+
+if [[ "$EUID" -ne "0" ]]; then
+  echo "[VOS-ERROR] You need to run vos as sudo in order to uninstall."
+  exit 1
+fi
 
 echo "[VOS-WARNING] This command will COMPLETELY delete VOS and all related files off of your computer."
 read -p "[VOS-INPUT] Confirm that you wish to continue? (y/n): " uninstall_confirm

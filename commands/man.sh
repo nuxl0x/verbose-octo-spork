@@ -9,4 +9,5 @@ case "$COMMAND" in
   man) cat "$ASSETS/man_man.txt" ;;
   math) cat "$ASSETS/man_math.txt" ;;
   uninstall) cat "$ASSETS/man_uninstall.txt" ;;
+  *) echo "[VOS] Unable to find manual page '$COMMAND'. If you believe this to be an error, contact the developer." ;;
 esac
