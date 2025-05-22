@@ -2,6 +2,7 @@
 =======================================
 Syntax: (vos) install-dependencies
 
-Due to VOS not having any current dependencies, the 'install-dependencies' command is not functional.
+Current dependencies:
+- Python
 =======================================
 Use cmdlist in order to view other commands.
