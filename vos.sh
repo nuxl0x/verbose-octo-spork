@@ -12,7 +12,7 @@ ASSETS_DIRECTORY="/usr/local/share/vos/assets"
 
 # command functions (functions that are called upon determining the correct command)
 function adventure_game {
-    bash "$COMMANDS_DIRECTORY/adventure_game.sh"
+    python3 "$COMMANDS_DIRECTORY/adventure_game.py"
 }
 
 function cmdlist {
@@ -34,7 +34,6 @@ function man {
 function math {
     bash "$COMMANDS_DIRECTORY/math.sh" "$ARG_1" "$ARG_2" "$ARG_3" "$ARG_4"
 }
-
 
 function read {
     # arg 1 is the file to read from
