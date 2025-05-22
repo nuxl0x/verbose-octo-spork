@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 python_installed="false"
-jq_installed="false"
 install_method=()
 
 function detect_package_manager {
