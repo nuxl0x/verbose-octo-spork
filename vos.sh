@@ -11,9 +11,16 @@ COMMANDS_DIRECTORY="/usr/local/share/vos/commands"
 ASSETS_DIRECTORY="/usr/local/share/vos/assets"
 
 # command functions (functions that are called upon determining the correct command)
+function adventure_game {
+    bash "$COMMANDS_DIRECTORY/adventure_game.sh"
+}
 
 function cmdlist {
     bash "$COMMANDS_DIRECTORY/cmdlist.sh"
+}
+
+function credits {
+    bash "$COMMANDS_DIRECTORY/credits.sh"
 }
 
 function install_dependencies {
@@ -28,6 +35,12 @@ function math {
     bash "$COMMANDS_DIRECTORY/math.sh" "$ARG_1" "$ARG_2" "$ARG_3" "$ARG_4"
 }
 
+
+function read {
+    # arg 1 is the file to read from
+    bash "$COMMANDS_DIRECTORY/read.sh" "$ARG_1"
+}
+
 function uninstall {
     bash "$COMMANDS_DIRECTORY/uninstall.sh"
 }
@@ -37,29 +50,16 @@ function help {
     echo "[VOS] Run 'vos cmdlist' to view all commands."
 }
 
-function adventure_game {
-    bash "$COMMANDS_DIRECTORY/adventure_game.sh"
-}
-
-function read {
-    # arg 1 is the file to read from
-    bash "$COMMANDS_DIRECTORY/read.sh" "$ARG_1"
-}
-
-function credits {
-    bash "$COMMANDS_DIRECTORY/credits.sh"
-}
-
 case "$COMMAND" in
+    adventure-game) adventure_game ;;
     cmdlist) cmdlist ;;
+    credits) credits ;;
     install-dependencies) install_dependencies ;;
     man) man ;;
     math) math ;;
+    read) read ;;
     uninstall) uninstall ;;
     ""|help) help ;;
-    adventure-game) adventure_game ;;
-    read) read ;;
-    credits) credits ;;
     *)
         echo "[VOS] Error: Command '$COMMAND' not found."
         echo "[VOS] If you believe this to be an issue, report this error on Github."
