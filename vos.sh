@@ -37,6 +37,19 @@ function help {
     echo "[VOS] Run 'vos cmdlist' to view all commands."
 }
 
+function adventure_game {
+    bash "$COMMANDS_DIRECTORY/adventure_game.sh"
+}
+
+function read {
+    # arg 1 is the file to read from
+    bash "$COMMANDS_DIRECTORY/read.sh" "$ARG_1"
+}
+
+function credits {
+    bash "$COMMANDS_DIRECTORY/credits.sh"
+}
+
 case "$COMMAND" in
     cmdlist) cmdlist ;;
     install-dependencies) install_dependencies ;;
@@ -44,6 +57,9 @@ case "$COMMAND" in
     math) math ;;
     uninstall) uninstall ;;
     ""|help) help ;;
+    adventure-game) adventure_game ;;
+    read) read ;;
+    credits) credits ;;
     *)
         echo "[VOS] Error: Command '$COMMAND' not found."
         echo "[VOS] If you believe this to be an issue, report this error on Github."
