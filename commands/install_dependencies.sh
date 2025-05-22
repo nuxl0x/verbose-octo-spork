@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
 python_installed="false"
+jq_installed="false"
 install_method=()
 
 function detect_package_manager {
@@ -46,6 +47,7 @@ function install_dependencies {
   if [[ "$python_installed" == "false" ]]; then
     sudo "${install_method[@]}" python3
   fi
+  
   echo "[VOS] All dependencies installed."
 }
 
