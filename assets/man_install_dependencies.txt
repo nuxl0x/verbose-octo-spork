@@ -3,6 +3,7 @@
 Syntax: (vos) install-dependencies
 
 Current dependencies:
-- Python
+- python
+- jq
 =======================================
 Use cmdlist in order to view other commands.
