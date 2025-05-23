@@ -3,7 +3,7 @@ from time import sleep
 
 
 def update_local_data_from_file():
-    with open("game_save.json", "r") as file:
+    with open("/usr/local/share/vos/assets/game_save.json", "r") as file:
         retrieved_data = json.load(file)
 
     player_data = {
@@ -21,9 +21,9 @@ def update_local_data_from_file():
 
 
 def save_local_data_to_file(data_to_save):
-    with open("game_save.json", "w") as file:
+    with open("/usr/local/share/vos/assets/game_save.json", "w") as file:
         json.dump(data_to_save, file, indent=4)
-    print("Saved data to file...")
+    print("[VOS] Saved data to file...")
 
 
 def intro(plr_data):
