@@ -1,11 +1,20 @@
 {
-  "playerName": "default",
-  "playerLevel": 1,
-  "playerInventory": ["torch"],
-  "asylumUnlocked": false,
-  "bridgeUnlocked": false,
-  "canyonUnlocked": false,
-  "minesUnlocked": false,
-  "lavaUnlocked": false,
-  "firstSession": true
+    "name": "default",
+    "level": 1,
+    "inventory": [
+        "Torch",
+        "Nothing",
+        "Nothing",
+        "Nothing",
+        "Nothing",
+        "Nothing",
+        "Nothing",
+        "Nothing"
+    ],
+    "asylum": "false",
+    "bridge": "false",
+    "canyon": "false",
+    "mines": "false",
+    "lava": "false",
+    "first_session": "true"
 }
