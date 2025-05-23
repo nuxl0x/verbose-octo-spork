@@ -1,18 +1,11 @@
 #!/usr/bin/bash
 
-USER="nuxl0x"
-REPO="verbose-octo-spork"
-BRANCH="release"
 VERSION="2.0.0"
-
 ZIP_FILE="vos-release-$VERSION.zip"
 
-INSTALL_DIR="$HOME/Downloads/vos-release-$VERSION"
-echo "[VOS-INFO] install.sh is running in: $INSTALL_DIR."
-
 function download {
-  curl -L -o "$HOME/Downloads/$ZIP_FILE" "https://github.com/$USER/$REPO/archive/refs/heads/$BRANCH.zip"
-  unzip "$HOME/Downloads/$ZIP_FILE"
+  curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/release.zip"
+  unzip "/home/$USER/Downloads/$ZIP_FILE"
 }
                                                                                                                                                                               
 # ----- Installation Function -----
@@ -28,6 +21,9 @@ function install {
     echo "[VOS-INFO] Installation confirmed by user."
 
     download
+
+    INSTALL_DIR="$HOME/Downloads/vos-release-$VERSION"
+    echo "[VOS-INFO] install.sh is running in: $INSTALL_DIR."
 
     # Checks for required files to install
     if [[ ! -e "$INSTALL_DIR/vos.sh" ]]; then
