@@ -5,7 +5,7 @@ ZIP_FILE="vos-release-$VERSION.zip"
 
 function download {
   curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/release.zip"
-  unzip "/home/$USER/Downloads/$ZIP_FILE" -d "/home/$USER/Downloads/vos-release-$VERSION"
+  unzip "/home/$USER/Downloads/$ZIP_FILE" -d "/home/$USER/Downloads/vos-release-$VERSION/verbose-octo-spork-release"
 }
                                                                                                                                                                               
 # ----- Installation Function -----
