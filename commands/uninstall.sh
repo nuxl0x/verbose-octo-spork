@@ -17,7 +17,7 @@ function uninstall {
   exit 0
 }
 
-if [[ "$EUID" -ne "0" ]]; then
+if [[ "$EUID" -ne 0 ]]; then
   echo "[VOS-ERROR] You need to run vos as sudo in order to uninstall."
   exit 1
 fi
