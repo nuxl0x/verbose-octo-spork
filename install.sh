@@ -48,15 +48,15 @@ function install {
     sleep 2
 
     # Renames vos.sh into vos (executable)
-    mv "$INSTALL_DIR/vos.sh" "$INSTALL_DIR/vos"
+    sudo mv "$INSTALL_DIR/vos.sh" "$INSTALL_DIR/vos"
     echo "[VOS-INFO] vos.sh renamed to vos."
 
-    chmod +x "$INSTALL_DIR/vos"
+    sudo chmod +x "$INSTALL_DIR/vos"
     echo "[VOS-INFO] vos given executable permissions."
 
     # Removes old installs and puts new install in
-    rm -f "/usr/local/bin/vos"
-    mv "$INSTALL_DIR/vos" "/usr/local/bin"
+    sudo rm -f "/usr/local/bin/vos"
+    sudo mv "$INSTALL_DIR/vos" "/usr/local/bin"
     echo "[VOS-INFO] vos moved into '/usr/local/bin'."
 
     # Checks for new install
@@ -66,10 +66,10 @@ function install {
     fi
 
     # Removes old commands folder and creates vos share if it doesn't exist
-    rm -rf "/usr/local/share/vos"
-    mkdir -p "/usr/local/share/vos"
+    sudo rm -rf "/usr/local/share/vos"
+    sudo mkdir -p "/usr/local/share/vos"
     # Puts new commands install in
-    mv "$INSTALL_DIR/commands" "/usr/local/share/vos"
+    sudo mv "$INSTALL_DIR/commands" "/usr/local/share/vos"
     echo "[VOS-INFO] commands moved into '/usr/local/share/vos'."
 
     # checks for new commands install
@@ -78,7 +78,7 @@ function install {
         exit 1
     fi
 
-    mv "$INSTALL_DIR/assets" "/usr/local/share/vos"
+    sudo mv "$INSTALL_DIR/assets" "/usr/local/share/vos"
     echo "[VOS-INFO] assets moved into '/usr/local/share/vos'."
 
     # checks for new assets install
@@ -91,12 +91,6 @@ function install {
     exit 0
 
 }
-
-# checks if install.sh is running as sudo
-if [[ "$EUID" != 0 ]]; then
-    echo "[VOS-ERROR] install.sh must be run with sudo."
-    exit 1
-fi
 
 echo "[VOS-INFO] install.sh is running successfully. Please wait."
 sleep 2
