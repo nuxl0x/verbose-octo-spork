@@ -5,7 +5,7 @@ ZIP_FILE="vos-release-$VERSION.zip"
 
 function download {
   curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/release.zip"
-  unzip "/home/$USER/Downloads/$ZIP_FILE" -d "/home/$USER/Downloads/vos-release-$VERSION/verbose-octo-spork-release"
+  unzip "/home/$USER/Downloads/$ZIP_FILE" -d "/home/$USER/Downloads/vos-release-$VERSION"
 }
                                                                                                                                                                               
 # ----- Installation Function -----
@@ -22,7 +22,7 @@ function install {
 
     download
 
-    INSTALL_DIR="$HOME/Downloads/vos-release-$VERSION"
+    INSTALL_DIR="$HOME/Downloads/vos-release-$VERSION/verbose-octo-spork-release"
     echo "[VOS-INFO] install.sh is running in: $INSTALL_DIR."
 
     # Checks for required files to install
