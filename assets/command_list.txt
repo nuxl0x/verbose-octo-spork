@@ -1,9 +1,12 @@
 [VOS] verbose-octo-spork \ Command List
 =======================================
+- adventure-game | Play a built-in adventure game.
 - cmdlist | View list of commands.
+- credits | View VOS credits.
 - install-dependencies | Install VOS dependencies.
 - man | View manual page.
 - math | Perform mathematical operation.
+- read | Read a files data.
 - uninstall | Uninstall VOS.
 =======================================
 Use man(command) in order to see information and usage about every command.
