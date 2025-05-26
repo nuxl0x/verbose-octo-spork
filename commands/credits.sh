@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-VERSION="/usr/local/share/vos/assets/version.txt"
+VERSION=$(cat "/usr/local/share/vos/assets/version.txt")
 
 cat <<EOF
 [VOS] verbose-octo-spork \ Credits
