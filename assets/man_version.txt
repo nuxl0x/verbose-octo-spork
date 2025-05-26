@@ -1,0 +1,7 @@
+[VOS] verbose-octo-spork \ Manual \ version
+=======================================
+Syntax: (vos) version
+
+Prints out the current version of VOS that you have installed.
+=======================================
+Use cmdlist in order to view other commands.
