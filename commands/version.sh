@@ -3,4 +3,4 @@
 ASSETS="/usr/local/share/vos/assets"
 VERSION=$(cat "$ASSETS/version.txt")
 
-echo "$VERSION"
+echo "VOS \ verbose-octo-spork | v$VERSION"
