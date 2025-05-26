@@ -40,6 +40,10 @@ function read {
     bash "$COMMANDS_DIRECTORY/read.sh" "$ARG_1"
 }
 
+function version {
+    bash "$COMMANDS_DIRECTORY/version.sh" "$ARG_1"
+}
+
 function uninstall {
     bash "$COMMANDS_DIRECTORY/uninstall.sh"
 }
@@ -58,6 +62,7 @@ case "$COMMAND" in
     math) math ;;
     read) read ;;
     uninstall) uninstall ;;
+    version) version ;;
     ""|help) help ;;
     *)
         echo "[VOS] Error: Command '$COMMAND' not found."
