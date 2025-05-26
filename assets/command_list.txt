@@ -8,5 +8,6 @@
 - math | Perform mathematical operation.
 - read | Read a files data.
 - uninstall | Uninstall VOS.
+- version | View VOS version.
 =======================================
 Use man(command) in order to see information and usage about every command.
