@@ -12,5 +12,6 @@ case "$COMMAND" in
   math) cat "$ASSETS/man_math.txt" ;;
   read) cat "$ASSETS/man_read.txt" ;;
   uninstall) cat "$ASSETS/man_uninstall.txt" ;;
+  version) cat "$ASSETS/man_version.txt" ;;
   *) echo "[VOS] Unable to find manual page '$COMMAND'. If you believe this to be an error, contact the developer." ;;
 esac
