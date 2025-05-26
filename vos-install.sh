@@ -21,8 +21,8 @@ function install {
 
     download
 
-    INSTALL_DIR="/home/$USER/Downloads/vos-release-temp/verbose-octo-spork-release"
-    echo "[VOS-INFO] install.sh is running in: $INSTALL_DIR."
+    INSTALL_DIR="/home/$USER/Downloads/vos-release-temp/verbose-octo-spork-master"
+    echo "[VOS-INFO] vos-install.sh is running in: $INSTALL_DIR."
 
     # Checks for required files to install
     if [[ ! -e "$INSTALL_DIR/vos.sh" ]]; then
@@ -94,7 +94,7 @@ function install {
 
 }
 
-echo "[VOS-INFO] install.sh is running successfully. Please wait."
+echo "[VOS-INFO] vos-install.sh is running successfully. Please wait."
 sleep 2
 clear
 # cool ascii logo
