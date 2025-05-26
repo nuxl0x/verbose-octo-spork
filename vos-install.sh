@@ -3,7 +3,7 @@
 ZIP_FILE="vos-release-temp-zip.zip"
 
 function download {
-  curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/release.zip"
+  curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/master.zip"
   unzip "/home/$USER/Downloads/$ZIP_FILE" -d "/home/$USER/Downloads/vos-release-temp"
 }
                                                                                                                                                                               
