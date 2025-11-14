@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-ZIP_FILE="vos-release-temp-zip.zip"
+ZIP_FILE="vos-release-temp.zip"
 
 function download {
   curl -L -o "/home/$USER/Downloads/$ZIP_FILE" "https://github.com/nuxl0x/verbose-octo-spork/archive/refs/heads/master.zip"
