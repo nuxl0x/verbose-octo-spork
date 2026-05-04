@@ -1,9 +1,0 @@
-[VOS] verbose-octo-spork \ Manual \ adventure-game
-=======================================
-Syntax: (vos) adventure-game
-
-This command can be used to start a command-line based choose-your-own adventure game where you are able to explore lots of different paths.
-
-There is a lot of different things to do in this game and the game will expand with every single update. All progress will save across updates.
-=======================================
-Use cmdlist in order to view other commands.

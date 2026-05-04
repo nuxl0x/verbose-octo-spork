@@ -1,7 +1,0 @@
-[VOS] verbose-octo-spork \ Manual \ cmdlist
-=======================================
-Syntax: (vos) cmdlist
-
-Lists all available and functional commands.
-=======================================
-Use cmdlist in order to view other commands.

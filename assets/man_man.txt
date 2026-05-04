@@ -1,9 +1,0 @@
-[VOS] verbose-octo-spork \ Manual \ man
-=======================================
-Syntax: (vos) man <command>
-
-In order to be viewing this page, you, ironically, have to be using the 'man' command.
-The 'man' command allows you to view a manual on the arguments and how to use any given command.
-In this instance, you have viewing the manual on the manual command.
-=======================================
-Use cmdlist in order to view other commands.

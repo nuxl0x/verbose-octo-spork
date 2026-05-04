@@ -1,8 +1,0 @@
-[VOS] verbose-octo-spork \ Manual \ install-dependencies
-=======================================
-Syntax: (vos) install-dependencies
-
-Current dependencies:
-- Python
-=======================================
-Use cmdlist in order to view other commands.
