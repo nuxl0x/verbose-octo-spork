@@ -7,7 +7,7 @@ mod man;
 use std::env;
 
 fn log(message: &str) { println!("[VOS] {message}"); }
-fn log_error(message: &str) { println!("[VOS ERROR] {message}"); }
+fn log_error(message: &str) { eprintln!("[VOS ERROR] {message}"); }
 
 
 fn main() {
@@ -18,9 +18,9 @@ fn main() {
         return
     }
 
-    let first_arg = args[1].as_str();
+    let command = args[1].as_str();
 
-    match first_arg {
+    match command {
         "adventure-game" => adventure_game::adventure_game(),
         "cmds" => misc::cmds(),
         "credits" => misc::credits(),
@@ -29,7 +29,7 @@ fn main() {
         "uninstall" => uninstall::uninstall(),
         "version" => misc::version(),
         _ => {
-            let error_message = format!("Command '{}' not found.", first_arg);
+            let error_message = format!("Command '{command}' not found.");
             log_error(error_message.as_str());
             log("If you believe that this is an error, please make a report on Github.");
             println!();
