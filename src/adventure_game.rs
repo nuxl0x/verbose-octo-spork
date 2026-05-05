@@ -1,0 +1,1 @@
+pub fn adventure_game() {}

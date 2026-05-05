@@ -1,6 +1,10 @@
 [package]
 name = "verbose-octo-spork"
-version = "0.1.0"
+version = "3.0.0"
 edition = "2024"
 
 [dependencies]
+
+[[bin]]
+name = "vos"
+path = "src/main.rs"
